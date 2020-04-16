@@ -12,7 +12,8 @@ namespace Exercise06
                 Console.WriteLine("Hello World!");
                 Console.WriteLine("Would you like to continue (y/n)? ");
                 response = Console.ReadLine();
-            } while (response == "y" || response == "Y");
+                response = response.ToUpper();
+            } while (response == "Y");
         }
     }
 }
