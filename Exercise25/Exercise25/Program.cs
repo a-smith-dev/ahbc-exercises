@@ -7,12 +7,12 @@ namespace Exercise25
     {
         static void Main(string[] args)
         {
-            // using string.Split() to chop up a single sentence string into individual words.
+            // using string.Split() to chop up a single sentence string
+            // into individual words.
             do
             {
                 Console.Write("Enter a sentence: ");
-                string response = Console.ReadLine();
-                var responseArray = response.Split(" ");
+                var responseArray = Console.ReadLine().Split(" ");
                 for (int i = 0; i < responseArray.Length; i++)
                 {
                     Console.WriteLine(responseArray[i]);
