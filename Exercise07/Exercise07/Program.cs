@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Exercise07
 {
@@ -6,17 +7,24 @@ namespace Exercise07
     {
         static void Main(string[] args)
         {
-            var repeater = "";
-            var response = "";
             do
             {
                 Console.Write("Enter some text: ");
-                repeater = Console.ReadLine();
+                var repeater = Console.ReadLine();
                 Console.WriteLine(repeater);
                 Console.Write("Would you like to continue (y/n)? ");
-                response = Console.ReadLine();
-                response = response.ToUpper();
-            } while (response == "Y");
+            } while (ValidateYesNo(Console.ReadLine()) == "y");
+        }
+
+        static string ValidateYesNo(string response)
+        {
+            response = response.ToLower();
+            while (!Regex.IsMatch($"{response}", "^[yn]$"))
+            {
+                Console.Write("Please enter y or n: ");
+                response = Console.ReadLine().ToLower();
+            }
+            return response;
         }
     }
 }
