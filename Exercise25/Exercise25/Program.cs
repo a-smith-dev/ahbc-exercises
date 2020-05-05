@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Exercise25
@@ -12,10 +13,12 @@ namespace Exercise25
             do
             {
                 Console.Write("Enter a sentence: ");
-                var responseArray = Console.ReadLine().Split(" ");
-                for (int i = 0; i < responseArray.Length; i++)
+                var responseList = Console.ReadLine().Split(" ").ToList();
+                foreach (var word in responseList)
                 {
-                    Console.WriteLine(responseArray[i]);
+                    Console.WriteLine(word);
+                    // Below would also be valid, but unneccessary since word is a string.
+                    // Console.WriteLine($"{word}");
                 }
                 Console.Write("\nWould you like to continue (y/n)? ");
             } while (ValidateYesNo(Console.ReadLine()) == "y");
