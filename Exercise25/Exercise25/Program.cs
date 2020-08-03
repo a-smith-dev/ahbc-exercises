@@ -10,6 +10,18 @@ namespace Exercise25
         {
             // using string.Split() to chop up a single sentence string
             // into individual words.
+
+            var sentence = "The quick brown fox jumped over the lazy dog.";
+
+            var words = sentence.Split("");
+
+
+            foreach (var item in words)
+            {
+                Console.WriteLine(item);
+            }
+
+            return;
             do
             {
                 Console.Write("Enter a sentence: ");

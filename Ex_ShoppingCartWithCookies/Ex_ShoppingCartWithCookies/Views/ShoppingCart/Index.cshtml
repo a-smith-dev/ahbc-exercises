@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ShoppingCart
+
+<div class="row">
+    <div class="col-md-4">
+        You currently have @Model.Quantity items in your cart!
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-11-select-wifi-silver-202003?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1583541592591"/>
+        <br />
+        <form asp-action="Submit">
+            <button class="btn-success" type="submit">Add to Cart</button>
+        </form>
+    </div>
+</div>
+

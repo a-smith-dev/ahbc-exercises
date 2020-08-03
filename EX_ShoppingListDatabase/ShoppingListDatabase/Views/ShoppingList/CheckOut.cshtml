@@ -1,0 +1,49 @@
+﻿@{
+}
+@model List<Product>
+
+<h1>Check Out</h1>
+
+@if (Model.Count != 0)
+{
+    <h4>Below are a list of the items in your cart:</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Product Price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>
+                        @product.Name
+                    </td>
+                    <td>
+                        @product.Price.ToString("C")
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>
+                    Shopping total
+                </td>
+                <td>
+                    @ViewBag.Total.ToString("C")
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div></div>
+}
+else
+{
+    <hr />
+    <div>No items were in the cart.</div>
+}
